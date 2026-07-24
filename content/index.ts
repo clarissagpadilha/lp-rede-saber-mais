@@ -1,0 +1,17 @@
+export { benefits, benefitsContent } from "./benefits";
+export { complementaryContent, complementaryItems } from "./complementary";
+export { conceptContent, conceptPillars } from "./concept";
+export { credibilityItems } from "./credibility";
+export { ctaFinalContent } from "./cta-final";
+export { experienceContent } from "./experience";
+export { faqContent, faqItems } from "./faq";
+export { familyContent } from "./family";
+export { footerContent } from "./footer";
+export { formContent } from "./form";
+export { heroContent } from "./hero";
+export { ctaLink, navigationLinks } from "./navigation";
+export { personalizationContent } from "./personalization";
+export { ecosystemContent, pillars } from "./pillars";
+export { problemContent } from "./problem";
+export { segments, segmentsContent } from "./segments";
+export { implementationContent, steps } from "./steps";

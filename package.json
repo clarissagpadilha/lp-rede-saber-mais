@@ -3,24 +3,31 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "node scripts/dev.mjs",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "optimize:images": "node scripts/optimize-images.mjs",
+    "generate:seo-assets": "node scripts/generate-seo-assets.mjs"
   },
   "dependencies": {
+    "@tailwindcss/postcss": "^4",
+    "framer-motion": "^12.42.2",
+    "lucide-react": "^1.26.0",
     "next": "16.2.11",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "tailwindcss": "^4",
+    "zod": "^4.4.3"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.11",
-    "tailwindcss": "^4",
+    "sharp": "^0.35.3",
     "typescript": "^5"
   }
 }

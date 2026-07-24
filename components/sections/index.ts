@@ -1,0 +1,15 @@
+export { BenefitsSection } from "./BenefitsSection";
+export { ComplementarySection } from "./ComplementarySection";
+export { ConceptSection } from "./ConceptSection";
+export { CredibilityBar } from "./CredibilityBar";
+export { CtaFinalSection } from "./CtaFinalSection";
+export { EcosystemSection } from "./EcosystemSection";
+export { ExperienceSection } from "./ExperienceSection";
+export { FamilySection } from "./FamilySection";
+export { FaqSection } from "./FaqSection";
+export { HeroSection } from "./HeroSection";
+export { ImplementationSection } from "./ImplementationSection";
+export { LeadFormSection } from "./LeadFormSection";
+export { PersonalizationSection } from "./PersonalizationSection";
+export { ProblemSection } from "./ProblemSection";
+export { SegmentsSection } from "./SegmentsSection";

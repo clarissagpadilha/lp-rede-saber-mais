@@ -1,26 +1,105 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --navy: #0f2a4a;
+  --blue: #1d4e89;
+  --blue-light: #eaf1f9;
+  --blue-mist: #f4f8fc;
+  --orange: #e8722c;
+  --orange-dark: #c85a1a;
+  --white: #ffffff;
+  --offwhite: #fafbfc;
+  --ink: #132033;
+  --gray: #5b6472;
+  --gray-soft: #8792a0;
+  --line: #e3e8ef;
+  --radius: 14px;
+  --radius-sm: 8px;
+  --max-width: 1180px;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-brand-navy: var(--navy);
+  --color-brand-blue: var(--blue);
+  --color-brand-blue-light: var(--blue-light);
+  --color-brand-blue-mist: var(--blue-mist);
+  --color-brand-orange: var(--orange);
+  --color-brand-orange-dark: var(--orange-dark);
+  --color-brand-white: var(--white);
+  --color-brand-offwhite: var(--offwhite);
+  --color-brand-ink: var(--ink);
+  --color-brand-gray: var(--gray);
+  --color-brand-gray-soft: var(--gray-soft);
+  --color-brand-line: var(--line);
+
+  --font-sans: var(--font-inter), sans-serif;
+  --font-serif: var(--font-fraunces), serif;
+  --font-mono: var(--font-ibm-plex-mono), monospace;
+  --font-manrope: var(--font-manrope), sans-serif;
+
+  --radius-brand: var(--radius);
+  --radius-brand-sm: var(--radius-sm);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --header-height: 4.25rem;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--white);
+  color: var(--ink);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+[id] {
+  scroll-margin-top: var(--header-height);
+}
+
+.section-spacing {
+  padding-block: clamp(3.5rem, 6vw, 6rem);
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  z-index: 100;
+  padding: 0.75rem 1rem;
+  background: var(--navy);
+  color: var(--white);
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-fraunces), serif;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
