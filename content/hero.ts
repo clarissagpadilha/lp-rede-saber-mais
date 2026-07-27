@@ -11,6 +11,18 @@ export const heroContent = {
   },
   subheadline:
     "Um Plano de Educação completo para empresas e instituições que desejam desenvolver pessoas, ampliar oportunidades e fortalecer sua cultura de aprendizagem.",
+  mobileTitleLines: [
+    { before: "Transforme ", highlight: "a educação" },
+    { text: "em um benefício" },
+    { text: "para colaboradores" },
+    { text: "e suas famílias" },
+  ],
+  mobileSubheadlineLines: [
+    "Um Plano de Educação completo para",
+    "empresas e instituições que desejam",
+    "desenvolver pessoas, ampliar oportunidades",
+    "e fortalecer sua cultura de aprendizagem.",
+  ],
   cta: {
     label: "Conheça o Plano de Educação",
     href: "#conceito",

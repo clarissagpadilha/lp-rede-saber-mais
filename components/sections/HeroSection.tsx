@@ -28,7 +28,7 @@ function HeroCta({ className }: { className?: string }) {
 }
 
 function HeroCopy({ mobile }: { mobile?: boolean }) {
-  const { eyebrow, subheadline, title } = heroContent;
+  const { eyebrow, mobileSubheadlineLines, mobileTitleLines, subheadline, title } = heroContent;
 
   return (
     <>
@@ -51,21 +51,37 @@ function HeroCopy({ mobile }: { mobile?: boolean }) {
             : "text-[clamp(1.75rem,4.5vw,3rem)] leading-[1.08]",
         )}
       >
-        {title.lines.map((line) => (
-          <span key={line.text} className={line.highlight ? "text-brand-orange" : undefined}>
-            {line.text}
-          </span>
-        ))}
+        {mobile
+          ? mobileTitleLines.map((line) =>
+              "highlight" in line ? (
+                <span key={line.highlight}>
+                  {line.before}
+                  <span className="text-brand-orange">{line.highlight}</span>
+                </span>
+              ) : (
+                <span key={line.text}>{line.text}</span>
+              ),
+            )
+          : title.lines.map((line) => (
+              <span key={line.text} className={line.highlight ? "text-brand-orange" : undefined}>
+                {line.text}
+              </span>
+            ))}
       </h1>
 
-      <p
-        className={cn(
-          "max-w-[520px] leading-relaxed text-brand-gray",
-          mobile ? "mt-3 text-[14px]" : "mt-4 text-[15px] sm:mt-5 sm:text-[16px] lg:text-[17px]",
-        )}
-      >
-        {subheadline}
-      </p>
+      {mobile ? (
+        <p className="mt-3 max-w-[520px] text-[14px] leading-relaxed text-brand-gray">
+          {mobileSubheadlineLines.map((line) => (
+            <span key={line} className="block">
+              {line}
+            </span>
+          ))}
+        </p>
+      ) : (
+        <p className="mt-4 max-w-[520px] text-[15px] leading-relaxed text-brand-gray sm:mt-5 sm:text-[16px] lg:text-[17px]">
+          {subheadline}
+        </p>
+      )}
     </>
   );
 }
