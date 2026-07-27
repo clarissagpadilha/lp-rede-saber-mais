@@ -34,10 +34,10 @@ function HeroCopy({ mobile }: { mobile?: boolean }) {
     <>
       <p
         className={cn(
-          "inline-flex w-fit rounded-full border border-brand-blue/20 bg-white/90 font-mono font-medium uppercase text-brand-blue",
+          "w-fit rounded-full border border-brand-blue/20 bg-white/90 font-mono font-medium uppercase text-brand-blue",
           mobile
-            ? "mb-3 whitespace-nowrap px-2.5 py-1 text-[8.5px] leading-none tracking-[0.035em]"
-            : "mb-4 px-4 py-1.5 text-[10.5px] tracking-[0.08em] sm:text-[11px]",
+            ? "mx-auto mb-3 flex whitespace-nowrap px-2.5 py-1 text-[8.5px] leading-none tracking-[0.035em]"
+            : "mb-4 inline-flex px-4 py-1.5 text-[10.5px] tracking-[0.08em] sm:text-[11px]",
         )}
       >
         {eyebrow}
