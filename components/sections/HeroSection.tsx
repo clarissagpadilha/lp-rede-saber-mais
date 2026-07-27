@@ -47,7 +47,7 @@ function HeroCopy({ mobile }: { mobile?: boolean }) {
         className={cn(
           "flex flex-col font-manrope font-[800] tracking-[-0.02em] text-brand-navy",
           mobile
-            ? "gap-0.5 text-[clamp(1.45rem,7vw,1.75rem)] leading-[1.05]"
+            ? "gap-0.5 text-center text-[clamp(1.45rem,7vw,1.75rem)] leading-[1.05]"
             : "text-[clamp(1.75rem,4.5vw,3rem)] leading-[1.08]",
         )}
       >
@@ -70,7 +70,7 @@ function HeroCopy({ mobile }: { mobile?: boolean }) {
       </h1>
 
       {mobile ? (
-        <p className="mt-3 max-w-[520px] text-[14px] leading-relaxed text-brand-gray">
+        <p className="mt-3 max-w-[520px] text-center text-[14px] leading-relaxed text-brand-gray">
           {mobileSubheadlineLines.map((line) => (
             <span key={line} className="block">
               {line}
