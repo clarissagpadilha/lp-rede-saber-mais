@@ -3,6 +3,7 @@ import { StickyCta, UtmCapture, WhatsAppButton } from "@/components/marketing";
 import { JsonLd } from "@/components/seo";
 import {
   BenefitsSection,
+  CeoStorySection,
   ComplementarySection,
   ConceptSection,
   CredibilityBar,
@@ -17,6 +18,7 @@ import {
   PersonalizationSection,
   ProblemSection,
   SegmentsSection,
+  SponsorsSection,
 } from "@/components/sections";
 import { getHomeJsonLd } from "@/lib/json-ld";
 
@@ -43,7 +45,9 @@ export default function HomePage() {
         <ComplementarySection />
         <PersonalizationSection />
         <ExperienceSection />
+        <SponsorsSection />
         <FaqSection />
+        <CeoStorySection />
         <CtaFinalSection />
         <LeadFormSection />
       </main>

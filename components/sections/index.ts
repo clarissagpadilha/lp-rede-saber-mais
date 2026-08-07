@@ -1,4 +1,5 @@
 export { BenefitsSection } from "./BenefitsSection";
+export { CeoStorySection } from "./CeoStorySection";
 export { ComplementarySection } from "./ComplementarySection";
 export { ConceptSection } from "./ConceptSection";
 export { CredibilityBar } from "./CredibilityBar";
@@ -13,3 +14,4 @@ export { LeadFormSection } from "./LeadFormSection";
 export { PersonalizationSection } from "./PersonalizationSection";
 export { ProblemSection } from "./ProblemSection";
 export { SegmentsSection } from "./SegmentsSection";
+export { SponsorsSection } from "./SponsorsSection";

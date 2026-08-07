@@ -8,7 +8,7 @@ import { getSectionIdFromHref } from "@/lib/scroll";
 import { cn } from "@/lib/utils";
 
 import { CloseIcon } from "../ui/SectionIcons";
-import { MobileNavGroup } from "./MobileNavGroup";
+import { NavSubmenuLabel } from "./NavSubmenuLabel";
 import { SiteNavLink } from "./SiteNavLink";
 import { SocialNavIcons } from "./SocialNavIcons";
 
@@ -103,16 +103,18 @@ export const MobileNav = memo(function MobileNav({
       >
         <ul className="flex flex-col gap-1">
           {navigationLinks.map((link) => {
-            if (link.children?.length) {
+            if (link.hasSubmenu) {
               return (
-                <MobileNavGroup
-                  key={link.label}
-                  label={link.label}
-                  items={link.children}
-                  darkTheme={!solid}
-                  solid={solid}
-                  onNavigate={onClose}
-                />
+                <li key={link.label}>
+                  <NavSubmenuLabel
+                    label={link.label}
+                    darkTheme={!solid}
+                    className={cn(
+                      "block min-h-11 rounded-lg px-3 py-3 text-[15px] font-medium",
+                      solid ? "text-brand-ink/75" : "text-white/85",
+                    )}
+                  />
+                </li>
               );
             }
 

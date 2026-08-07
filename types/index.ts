@@ -9,5 +9,6 @@ export type {
   NavLinkChild,
   PillarItem,
   SegmentItem,
+  SponsorSlot,
   StepItem,
 } from "./content";

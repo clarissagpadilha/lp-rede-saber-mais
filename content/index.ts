@@ -1,4 +1,5 @@
 export { benefits, benefitsContent } from "./benefits";
+export { ceoStoryContent } from "./ceo-story";
 export { complementaryContent, complementaryItems } from "./complementary";
 export { conceptContent, conceptPillars } from "./concept";
 export { credibilityItems } from "./credibility";
@@ -14,4 +15,5 @@ export { personalizationContent } from "./personalization";
 export { ecosystemContent, pillars } from "./pillars";
 export { problemContent } from "./problem";
 export { segments, segmentsContent } from "./segments";
+export { sponsorSlots, sponsorsContent } from "./sponsors";
 export { implementationContent, steps } from "./steps";

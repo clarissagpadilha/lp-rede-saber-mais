@@ -4,6 +4,46 @@ import { Container } from "@/components/ui";
 import { footerContent } from "@/content/footer";
 
 import { FooterContact } from "./FooterContact";
+import { NavSubmenuLabel } from "./NavSubmenuLabel";
+
+function FooterNavLink({
+  label,
+  href,
+  hasSubmenu,
+}: {
+  label: string;
+  href: string;
+  hasSubmenu?: boolean;
+}) {
+  const className =
+    "text-[13.5px] text-white/75 transition-colors hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white";
+
+  if (hasSubmenu) {
+    return <NavSubmenuLabel label={label} darkTheme className={className} />;
+  }
+
+  const isExternal = href.startsWith("http");
+
+  if (isExternal) {
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`${label} (abre em nova aba)`}
+        className={className}
+      >
+        {label}
+      </a>
+    );
+  }
+
+  return (
+    <Link href={href} className={className}>
+      {label}
+    </Link>
+  );
+}
 
 export function Footer() {
   const { brand, columns, contact, copyright, credits, description } = footerContent;
@@ -23,32 +63,15 @@ export function Footer() {
                 {columns[0].title}
               </h4>
               <ul className="space-y-2.5">
-                {columns[0].links.map((link) => {
-                  const isExternal = link.href.startsWith("http");
-
-                  return (
-                    <li key={`${columns[0].title}-${link.href}`}>
-                      {isExternal ? (
-                        <a
-                          href={link.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label={`${link.label} (abre em nova aba)`}
-                          className="text-[13.5px] text-white/75 transition-colors hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-                        >
-                          {link.label}
-                        </a>
-                      ) : (
-                        <Link
-                          href={link.href}
-                          className="text-[13.5px] text-white/75 transition-colors hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-                        >
-                          {link.label}
-                        </Link>
-                      )}
-                    </li>
-                  );
-                })}
+                {columns[0].links.map((link) => (
+                  <li key={`${columns[0].title}-${link.label}`}>
+                    <FooterNavLink
+                      label={link.label}
+                      href={link.href}
+                      hasSubmenu={link.hasSubmenu}
+                    />
+                  </li>
+                ))}
               </ul>
             </div>
           ) : null}

@@ -52,11 +52,11 @@ export function MobileNavGroup({
         id={panelId}
         className={cn(
           "overflow-hidden transition-all duration-200",
-          expanded ? "max-h-40 opacity-100" : "max-h-0 opacity-0",
+          expanded ? "max-h-80 opacity-100" : "max-h-0 opacity-0",
         )}
       >
         {items.map((item) => (
-          <li key={item.href}>
+          <li key={item.label}>
             <SiteNavLink
               href={item.href}
               label={item.label}

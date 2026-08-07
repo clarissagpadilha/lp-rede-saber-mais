@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 
 import { Logo } from "./Logo";
 import { MobileNav, MobileNavToggle } from "./MobileNav";
-import { NavDropdown } from "./NavDropdown";
+import { NavSubmenuLabel } from "./NavSubmenuLabel";
 import { SiteNavLink } from "./SiteNavLink";
 import { SocialNavIcons } from "./SocialNavIcons";
 
@@ -53,15 +53,8 @@ export function Header({ variant = "default" }: HeaderProps) {
           className="hidden items-center gap-5 text-[13.5px] font-medium lg:flex xl:gap-8 xl:text-[14px]"
         >
           {navigationLinks.map((link) => {
-            if (link.children?.length) {
-              return (
-                <NavDropdown
-                  key={link.label}
-                  label={link.label}
-                  items={link.children}
-                  darkTheme={useDarkNav}
-                />
-              );
+            if (link.hasSubmenu) {
+              return <NavSubmenuLabel key={link.label} label={link.label} darkTheme={useDarkNav} />;
             }
 
             const sectionId = getSectionIdFromHref(link.href ?? "");

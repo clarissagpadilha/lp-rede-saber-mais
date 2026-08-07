@@ -64,7 +64,7 @@ export function NavDropdown({ label, items, darkTheme = false }: NavDropdownProp
         role="menu"
         aria-label={label}
         className={cn(
-          "absolute top-[calc(100%+0.5rem)] left-1/2 z-[120] min-w-[11rem] -translate-x-1/2 rounded-lg border p-1.5 shadow-lg transition-all duration-200",
+          "absolute top-[calc(100%+0.5rem)] left-1/2 z-[120] min-w-[13.5rem] -translate-x-1/2 rounded-lg border p-1.5 shadow-lg transition-all duration-200",
           darkTheme
             ? "border-white/10 bg-[#0A1B33]/98 backdrop-blur-md"
             : "border-brand-line/80 bg-white/98 backdrop-blur-[14px]",
@@ -74,7 +74,7 @@ export function NavDropdown({ label, items, darkTheme = false }: NavDropdownProp
         )}
       >
         {items.map((item) => (
-          <li key={item.href} role="none">
+          <li key={item.label} role="none">
             <a
               href={item.href}
               role="menuitem"

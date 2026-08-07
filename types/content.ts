@@ -1,12 +1,14 @@
 export type NavLinkChild = {
   label: string;
   href: string;
+  hasSubmenu?: boolean;
 };
 
 export type NavLink = {
   label: string;
   href?: string;
   children?: NavLinkChild[];
+  hasSubmenu?: boolean;
 };
 
 export type IconName = string;
@@ -51,4 +53,10 @@ export type FaqItem = ContentItem & {
 export type FooterColumn = {
   title: string;
   links: NavLinkChild[];
+};
+
+export type SponsorSlot = ContentItem & {
+  name?: string;
+  logoSrc?: string;
+  href?: string;
 };
