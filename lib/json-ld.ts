@@ -13,7 +13,12 @@ export function getOrganizationJsonLd() {
     url: siteUrl,
     logo: absoluteAssetUrl("/icon.png"),
     description: SEO.organizationDescription,
-    sameAs: [siteConfig.instagram, siteConfig.website.replace(/\/+$/, "")],
+    sameAs: [
+      siteConfig.instagram,
+      siteConfig.facebook,
+      siteConfig.linkedin,
+      siteConfig.website.replace(/\/+$/, ""),
+    ],
   };
 }
 

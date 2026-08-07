@@ -1,4 +1,5 @@
-import { getWhatsAppUrlFromEnv } from "@/lib/whatsapp";
+import { siteConfig } from "@/config/site";
+import { getWhatsAppUrl } from "@/lib/whatsapp";
 
 function WhatsAppIcon({ className }: { className?: string }) {
   return (
@@ -14,16 +15,15 @@ function WhatsAppIcon({ className }: { className?: string }) {
 }
 
 export function WhatsAppButton() {
-  const url = getWhatsAppUrlFromEnv();
-
-  if (!url) return null;
+  const url = getWhatsAppUrl();
+  const phoneLabel = siteConfig.contact.whatsapp.display;
 
   return (
     <a
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Conversar pelo WhatsApp"
+      aria-label={`Conversar pelo WhatsApp ${phoneLabel} (abre em nova aba)`}
       className="fixed bottom-[calc(5rem+env(safe-area-inset-bottom,0px))] right-4 z-40 inline-flex size-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_12px_32px_-8px_rgba(37,211,102,0.55)] transition-transform focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#25D366] sm:bottom-6 sm:hover:scale-105"
     >
       <WhatsAppIcon className="size-7" />

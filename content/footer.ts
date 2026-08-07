@@ -1,29 +1,17 @@
 import type { FooterColumn } from "@/types";
 
-import { navigationLinks } from "./navigation";
 import { siteConfig } from "@/config/site";
+import { flattenNavigationLinks, navigationLinks } from "./navigation";
 
 export const footerContent = {
   brand: siteConfig.name,
   description:
     "Um ecossistema educacional para empresas, cooperativas, sindicatos, associações, instituições de ensino e órgãos públicos.",
+  contact: siteConfig.contact,
   columns: [
     {
       title: "Navegação",
-      links: navigationLinks,
-    },
-    {
-      title: "Contato",
-      links: [
-        {
-          label: "@plataformaredesabermais",
-          href: siteConfig.instagram,
-        },
-        {
-          label: "redesabermais.com",
-          href: siteConfig.website,
-        },
-      ],
+      links: flattenNavigationLinks(navigationLinks),
     },
     {
       title: "Institucional",
@@ -34,4 +22,5 @@ export const footerContent = {
     },
   ] as FooterColumn[],
   copyright: `© ${new Date().getFullYear()} Rede Saber Mais. Todos os direitos reservados.`,
+  credits: siteConfig.credits,
 };

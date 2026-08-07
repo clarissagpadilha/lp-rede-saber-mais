@@ -8,7 +8,9 @@ import { getSectionIdFromHref } from "@/lib/scroll";
 import { cn } from "@/lib/utils";
 
 import { CloseIcon } from "../ui/SectionIcons";
+import { MobileNavGroup } from "./MobileNavGroup";
 import { SiteNavLink } from "./SiteNavLink";
+import { SocialNavIcons } from "./SocialNavIcons";
 
 type MobileNavProps = {
   id: string;
@@ -101,11 +103,24 @@ export const MobileNav = memo(function MobileNav({
       >
         <ul className="flex flex-col gap-1">
           {navigationLinks.map((link) => {
-            const sectionId = getSectionIdFromHref(link.href);
+            if (link.children?.length) {
+              return (
+                <MobileNavGroup
+                  key={link.label}
+                  label={link.label}
+                  items={link.children}
+                  darkTheme={!solid}
+                  solid={solid}
+                  onNavigate={onClose}
+                />
+              );
+            }
+
+            const sectionId = getSectionIdFromHref(link.href ?? "");
             return (
-              <li key={link.href}>
+              <li key={link.label}>
                 <SiteNavLink
-                  href={link.href}
+                  href={link.href ?? "#"}
                   label={link.label}
                   active={sectionId !== null && sectionId === activeSectionId}
                   darkTheme={!solid}
@@ -123,6 +138,9 @@ export const MobileNav = memo(function MobileNav({
           <ButtonLink href={ctaLink.href} className="w-full rounded-lg" onClick={onClose}>
             {ctaLink.label}
           </ButtonLink>
+        </div>
+        <div className={cn("mt-4 border-t pt-4", solid ? "border-brand-line" : "border-white/10")}>
+          <SocialNavIcons darkTheme={!solid} className="justify-center" />
         </div>
       </nav>
     </div>

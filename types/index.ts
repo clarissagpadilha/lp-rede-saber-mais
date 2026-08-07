@@ -6,6 +6,7 @@ export type {
   FooterColumn,
   IconName,
   NavLink,
+  NavLinkChild,
   PillarItem,
   SegmentItem,
   StepItem,

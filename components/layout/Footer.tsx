@@ -2,10 +2,11 @@ import Link from "next/link";
 
 import { Container } from "@/components/ui";
 import { footerContent } from "@/content/footer";
-import { siteConfig } from "@/config/site";
+
+import { FooterContact } from "./FooterContact";
 
 export function Footer() {
-  const { brand, columns, copyright, description } = footerContent;
+  const { brand, columns, contact, copyright, credits, description } = footerContent;
 
   return (
     <footer className="bg-brand-navy text-white/70">
@@ -16,7 +17,45 @@ export function Footer() {
             <p className="max-w-[280px] text-[13.5px] leading-relaxed">{description}</p>
           </div>
 
-          {columns.map((column) => (
+          {columns[0] ? (
+            <div key={columns[0].title}>
+              <h4 className="mb-3.5 text-[12.5px] font-semibold uppercase tracking-[0.06em] text-white/50">
+                {columns[0].title}
+              </h4>
+              <ul className="space-y-2.5">
+                {columns[0].links.map((link) => {
+                  const isExternal = link.href.startsWith("http");
+
+                  return (
+                    <li key={`${columns[0].title}-${link.href}`}>
+                      {isExternal ? (
+                        <a
+                          href={link.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`${link.label} (abre em nova aba)`}
+                          className="text-[13.5px] text-white/75 transition-colors hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                        >
+                          {link.label}
+                        </a>
+                      ) : (
+                        <Link
+                          href={link.href}
+                          className="text-[13.5px] text-white/75 transition-colors hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                        >
+                          {link.label}
+                        </Link>
+                      )}
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          ) : null}
+
+          <FooterContact whatsapp={contact.whatsapp} email={contact.email} />
+
+          {columns.slice(1).map((column) => (
             <div key={column.title}>
               <h4 className="mb-3.5 text-[12.5px] font-semibold uppercase tracking-[0.06em] text-white/50">
                 {column.title}
@@ -53,18 +92,19 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="flex flex-wrap items-center justify-between gap-3 pt-6 text-xs text-white/45">
-          <span>{copyright}</span>
+        <p className="pt-6 text-center text-xs text-white/45">
+          {copyright}{" "}
+          Criado por{" "}
           <a
-            href={siteConfig.website}
+            href={credits.agencyUrl}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Site oficial Rede Saber Mais (abre em nova aba)"
-            className="transition-colors hover:text-white/70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+            aria-label={`${credits.agencyName} (abre em nova aba)`}
+            className="text-white/60 transition-colors hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
           >
-            {siteConfig.website.replace(/^https?:\/\//, "")}
+            {credits.agencyName}
           </a>
-        </div>
+        </p>
       </Container>
     </footer>
   );

@@ -1,6 +1,6 @@
 "use client";
 
-import { memo, useCallback, useId, useRef, useState } from "react";
+import { useCallback, useId, useRef, useState } from "react";
 
 import { ButtonLink, Container } from "@/components/ui";
 import { ctaLink, navigationLinks, navigationSectionIds } from "@/content/navigation";
@@ -10,7 +10,9 @@ import { cn } from "@/lib/utils";
 
 import { Logo } from "./Logo";
 import { MobileNav, MobileNavToggle } from "./MobileNav";
+import { NavDropdown } from "./NavDropdown";
 import { SiteNavLink } from "./SiteNavLink";
+import { SocialNavIcons } from "./SocialNavIcons";
 
 type HeaderProps = {
   variant?: "default" | "hero";
@@ -51,11 +53,22 @@ export function Header({ variant = "default" }: HeaderProps) {
           className="hidden items-center gap-5 text-[13.5px] font-medium lg:flex xl:gap-8 xl:text-[14px]"
         >
           {navigationLinks.map((link) => {
-            const sectionId = getSectionIdFromHref(link.href);
+            if (link.children?.length) {
+              return (
+                <NavDropdown
+                  key={link.label}
+                  label={link.label}
+                  items={link.children}
+                  darkTheme={useDarkNav}
+                />
+              );
+            }
+
+            const sectionId = getSectionIdFromHref(link.href ?? "");
             return (
               <SiteNavLink
-                key={link.href}
-                href={link.href}
+                key={link.label}
+                href={link.href ?? "#"}
                 label={link.label}
                 active={sectionId !== null && sectionId === activeSectionId}
                 darkTheme={useDarkNav}
@@ -71,6 +84,10 @@ export function Header({ variant = "default" }: HeaderProps) {
           >
             {ctaLink.label}
           </ButtonLink>
+          <SocialNavIcons
+            darkTheme={useDarkNav}
+            className="hidden md:flex"
+          />
           <MobileNavToggle
             ref={toggleRef}
             open={menuOpen}

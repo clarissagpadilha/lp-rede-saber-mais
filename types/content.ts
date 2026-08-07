@@ -1,6 +1,12 @@
-export type NavLink = {
+export type NavLinkChild = {
   label: string;
   href: string;
+};
+
+export type NavLink = {
+  label: string;
+  href?: string;
+  children?: NavLinkChild[];
 };
 
 export type IconName = string;
@@ -44,5 +50,5 @@ export type FaqItem = ContentItem & {
 
 export type FooterColumn = {
   title: string;
-  links: NavLink[];
+  links: NavLinkChild[];
 };
