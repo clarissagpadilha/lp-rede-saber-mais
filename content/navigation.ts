@@ -1,6 +1,6 @@
 import type { NavLink, NavLinkChild } from "@/types";
 
-/** Reservado para uso futuro do submenu de Cursos. */
+/** Links do submenu Cursos (menu principal). */
 export const courseSubmenuLinks: NavLinkChild[] = [
   { label: "Plataforma 1", href: "https://redesabermais.com/" },
   { label: "Plataforma 2", href: "https://aqua-tiger-671921.hostingersite.com/" },
@@ -16,7 +16,10 @@ export const navigationLinks: NavLink[] = [
   { label: "Soluções", href: "#ecossistema" },
   { label: "Para sua organização", href: "#organizacoes" },
   { label: "Sobre", href: "#experiencia" },
-  { label: "Cursos", hasSubmenu: true },
+  {
+    label: "Cursos",
+    children: courseSubmenuLinks,
+  },
 ];
 
 export const navigationSectionIds = navigationLinks.flatMap((link) =>
@@ -25,7 +28,7 @@ export const navigationSectionIds = navigationLinks.flatMap((link) =>
 
 export function flattenNavigationLinks(links: NavLink[] = navigationLinks): NavLinkChild[] {
   return links.flatMap((link) => {
-    if (link.hasSubmenu) {
+    if (link.children?.length) {
       return [{ label: link.label, href: "#", hasSubmenu: true }];
     }
 

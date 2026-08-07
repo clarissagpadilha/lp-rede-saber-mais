@@ -8,7 +8,6 @@ export type NavLink = {
   label: string;
   href?: string;
   children?: NavLinkChild[];
-  hasSubmenu?: boolean;
 };
 
 export type IconName = string;
