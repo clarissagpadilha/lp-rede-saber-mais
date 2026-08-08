@@ -5,10 +5,10 @@ export const courseSubmenuLinks: NavLinkChild[] = [
   { label: "Plataforma 1", href: "https://redesabermais.com/" },
   { label: "Plataforma 2", href: "https://aqua-tiger-671921.hostingersite.com/" },
   { label: "Ebooks/Duolingo", href: "https://plataformadeensino.redesabermais.com/" },
-  { label: "Bolsa EJA", href: "https://redesabermais.com/" },
-  { label: "Bolsa Tecnicos", href: "https://redesabermais.com/" },
-  { label: "Bolsa Graduação", href: "https://redesabermais.com/" },
-  { label: "Bolsa Pós", href: "https://redesabermais.com/" },
+  { label: "EJA", href: "https://redesabermais.com/" },
+  { label: "Cursos Técnicos", href: "https://redesabermais.com/" },
+  { label: "Graduação", href: "https://redesabermais.com/" },
+  { label: "Pós Graduação", href: "https://redesabermais.com/" },
 ];
 
 export const navigationLinks: NavLink[] = [
