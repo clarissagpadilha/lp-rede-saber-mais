@@ -8,7 +8,7 @@ export const courseSubmenuLinks: NavLinkChild[] = [
   { label: "EJA", href: "https://redesabermais.com/" },
   { label: "Cursos Técnicos", href: "https://redesabermais.com/" },
   { label: "Graduação", href: "https://redesabermais.com/" },
-  { label: "Pós Graduação", href: "https://redesabermais.com/" },
+  { label: "Pós-Graduação", href: "https://redesabermais.com/" },
 ];
 
 export const navigationLinks: NavLink[] = [
