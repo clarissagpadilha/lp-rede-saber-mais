@@ -18,6 +18,9 @@ type HeaderProps = {
   variant?: "default" | "hero";
 };
 
+const navItemClassName =
+  "rounded-md px-2.5 py-1.5 transition-colors hover:bg-brand-blue-mist/70 xl:px-3";
+
 export function Header({ variant = "default" }: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuId = useId();
@@ -44,12 +47,12 @@ export function Header({ variant = "default" }: HeaderProps) {
           : "border-b border-brand-line/40 bg-white/85 shadow-[0_1px_2px_rgba(15,42,74,0.05)] backdrop-blur-[12px] supports-[backdrop-filter]:bg-white/85",
       )}
     >
-      <Container className="flex min-h-[var(--header-height)] items-center justify-between gap-3 py-3 sm:gap-4 sm:py-3.5">
-        <Logo />
+      <Container className="flex min-h-[var(--header-height)] items-center gap-2.5 py-3 lg:gap-3 xl:gap-3.5">
+        <Logo className="shrink-0 [&_img]:h-9 [&_img]:w-auto [&_img]:sm:h-10" />
 
         <nav
           aria-label="Menu principal"
-          className="hidden items-center gap-5 overflow-visible text-[13.5px] font-semibold lg:flex xl:gap-8 xl:text-[14px]"
+          className="hidden min-w-0 flex-nowrap items-center gap-0.5 whitespace-nowrap text-[13px] font-medium tracking-[0.01em] lg:flex xl:gap-1 xl:text-[13.5px] 2xl:text-[14px]"
         >
           {navigationLinks.map((link, index) => {
             if (link.children?.length) {
@@ -58,9 +61,10 @@ export function Header({ variant = "default" }: HeaderProps) {
               return (
                 <NavDropdown
                   key={link.label}
-                  label={link.label}
+                  label={link.menuLabel ?? link.label}
                   items={link.children}
                   align={alignMenuToEnd ? "end" : "center"}
+                  triggerClassName={navItemClassName}
                 />
               );
             }
@@ -70,21 +74,24 @@ export function Header({ variant = "default" }: HeaderProps) {
               <SiteNavLink
                 key={link.label}
                 href={link.href ?? "#"}
-                label={link.label}
+                label={link.menuLabel ?? link.label}
                 active={sectionId !== null && sectionId === activeSectionId}
+                className={navItemClassName}
               />
             );
           })}
         </nav>
 
-        <div className="flex shrink-0 items-center gap-2 sm:gap-3">
-          <ButtonLink
-            href={ctaLink.href}
-            className="hidden rounded-lg px-4 py-2.5 text-[13px] md:inline-flex lg:px-5 lg:text-sm"
-          >
-            {ctaLink.label}
-          </ButtonLink>
-          <SocialNavIcons className="hidden md:flex" />
+        <ButtonLink
+          href={ctaLink.href}
+          className="hidden min-h-10 shrink-0 whitespace-nowrap rounded-lg px-4 py-2.5 text-[13px] md:inline-flex xl:px-5 xl:text-sm"
+        >
+          {ctaLink.label}
+        </ButtonLink>
+
+        <SocialNavIcons className="hidden shrink-0 lg:flex" />
+
+        <div className="ml-auto shrink-0 lg:hidden">
           <MobileNavToggle
             ref={toggleRef}
             open={menuOpen}

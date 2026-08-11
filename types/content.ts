@@ -6,6 +6,7 @@ export type NavLinkChild = {
 
 export type NavLink = {
   label: string;
+  menuLabel?: string;
   href?: string;
   children?: NavLinkChild[];
 };

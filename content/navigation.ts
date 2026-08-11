@@ -21,7 +21,7 @@ export const healthWellnessSubmenuLinks: NavLinkChild[] = [
 export const navigationLinks: NavLink[] = [
   { label: "O Plano", href: "#conceito" },
   { label: "Soluções", href: "#ecossistema" },
-  { label: "Para sua organização", href: "#organizacoes" },
+  { label: "Para sua organização", href: "#organizacoes", menuLabel: "Organizações" },
   { label: "Sobre", href: "#experiencia" },
   {
     label: "Cursos",
@@ -29,6 +29,7 @@ export const navigationLinks: NavLink[] = [
   },
   {
     label: "Saúde e bem estar",
+    menuLabel: "Saúde",
     children: healthWellnessSubmenuLinks,
   },
 ];

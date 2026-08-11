@@ -38,7 +38,7 @@ export function SocialNavIcons({
               "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2",
               darkTheme
                 ? "border-white/20 bg-white/10 text-white hover:border-white/35 hover:bg-white/20 focus-visible:outline-white"
-                : "border-brand-line/80 bg-brand-blue-mist/70 text-brand-navy/75 hover:border-brand-blue/25 hover:bg-brand-blue-mist hover:text-brand-blue focus-visible:outline-brand-blue",
+                : "border-brand-line/70 bg-white text-brand-navy/80 shadow-[0_1px_2px_rgba(15,42,74,0.05)] hover:border-brand-blue/30 hover:bg-brand-blue-mist hover:text-brand-blue focus-visible:outline-brand-blue",
             )}
           >
             <Icon className={cn("size-4", iconClassName)} />

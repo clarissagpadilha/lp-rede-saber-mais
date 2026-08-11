@@ -11,6 +11,7 @@ type NavDropdownProps = {
   items: NavLinkChild[];
   darkTheme?: boolean;
   align?: "center" | "end";
+  triggerClassName?: string;
 };
 
 export function NavDropdown({
@@ -18,6 +19,7 @@ export function NavDropdown({
   items,
   darkTheme = false,
   align = "center",
+  triggerClassName,
 }: NavDropdownProps) {
   const [open, setOpen] = useState(false);
   const menuId = useId();
@@ -47,12 +49,13 @@ export function NavDropdown({
     };
   }, [open]);
 
-  const triggerClassName = cn(
-    "inline-flex items-center gap-1 transition-colors duration-300",
+  const triggerClasses = cn(
+    "inline-flex shrink-0 items-center gap-0.5 whitespace-nowrap transition-colors duration-300",
     "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2",
     darkTheme
       ? "text-white/95 hover:text-white focus-visible:outline-white"
       : "text-brand-navy/90 hover:text-brand-blue focus-visible:outline-brand-blue",
+    triggerClassName,
   );
 
   const itemClassName = cn(
@@ -78,7 +81,7 @@ export function NavDropdown({
     >
       <button
         type="button"
-        className={triggerClassName}
+        className={triggerClasses}
         aria-expanded={open}
         aria-haspopup="true"
         aria-controls={menuId}
@@ -104,10 +107,10 @@ export function NavDropdown({
           aria-label={label}
           aria-hidden={!open}
           className={cn(
-            "max-h-[min(24rem,calc(100dvh-var(--header-height)-1rem))] overflow-y-auto overscroll-contain rounded-lg border p-1.5 shadow-lg transition-all duration-200",
+            "max-h-[min(24rem,calc(100dvh-var(--header-height)-1rem))] overflow-y-auto overscroll-contain rounded-xl border p-1.5 shadow-[0_12px_40px_rgba(15,42,74,0.12)] transition-all duration-200",
             darkTheme
               ? "border-white/10 bg-[#0A1B33]/98 backdrop-blur-md"
-              : "border-brand-line/80 bg-white/98 backdrop-blur-[14px]",
+              : "border-brand-line/70 bg-white/98 backdrop-blur-[14px]",
             open ? "translate-y-0 opacity-100" : "-translate-y-1 opacity-0",
           )}
         >

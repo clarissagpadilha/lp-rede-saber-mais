@@ -29,7 +29,7 @@ export function SiteNavLink({
   const isExternal = href.startsWith("http");
 
   const linkClassName = cn(
-    "relative transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2",
+    "relative shrink-0 whitespace-nowrap transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2",
     darkTheme
       ? "focus-visible:outline-white"
       : "focus-visible:outline-brand-blue",
