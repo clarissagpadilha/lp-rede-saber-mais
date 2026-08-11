@@ -4,8 +4,8 @@ import type { PillarItem } from "@/types";
 
 function PillarCard({ pillar }: { pillar: PillarItem }) {
   return (
-    <article className="relative z-[1] rounded-brand border border-brand-line bg-white p-5 text-left transition-[transform,box-shadow] sm:p-[26px_20px] sm:hover:-translate-y-1 sm:hover:shadow-[0_20px_40px_-18px_rgba(15,42,74,0.2)]">
-      <div className="mb-4 flex size-9 items-center justify-center rounded-full bg-brand-blue-light text-brand-blue">
+    <article className="relative z-[1] rounded-brand border border-brand-line bg-white p-5 text-center transition-[transform,box-shadow] sm:p-[26px_20px] sm:hover:-translate-y-1 sm:hover:shadow-[0_20px_40px_-18px_rgba(15,42,74,0.2)]">
+      <div className="mx-auto mb-4 flex size-9 items-center justify-center rounded-full bg-brand-blue-light text-brand-blue">
         <SectionIcon name={pillar.icon} className="size-[18px]" />
       </div>
       <h3 className="mb-2 font-serif text-[16.5px] leading-snug text-brand-navy">{pillar.title}</h3>
