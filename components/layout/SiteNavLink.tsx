@@ -12,6 +12,7 @@ type SiteNavLinkProps = {
   darkTheme?: boolean;
   className?: string;
   onNavigate?: () => void;
+  tabIndex?: number;
 };
 
 export function SiteNavLink({
@@ -21,6 +22,7 @@ export function SiteNavLink({
   darkTheme = false,
   className,
   onNavigate,
+  tabIndex,
 }: SiteNavLinkProps) {
   const sectionId = getSectionIdFromHref(href);
   const isHashLink = sectionId !== null;
@@ -36,8 +38,8 @@ export function SiteNavLink({
         ? "font-semibold text-white"
         : "font-semibold text-brand-blue"
       : darkTheme
-        ? "text-white/85 hover:text-white"
-        : "text-brand-ink/75 hover:text-brand-blue",
+        ? "text-white/95 hover:text-white"
+        : "text-brand-navy/90 hover:text-brand-blue",
     className,
   );
 
@@ -57,6 +59,7 @@ export function SiteNavLink({
         rel="noopener noreferrer"
         onClick={handleClick}
         aria-label={`${label} (abre em nova aba)`}
+        tabIndex={tabIndex}
         className={linkClassName}
       >
         {label}
@@ -69,6 +72,7 @@ export function SiteNavLink({
       href={href}
       onClick={handleClick}
       aria-current={active ? "page" : undefined}
+      tabIndex={tabIndex}
       className={linkClassName}
     >
       {label}

@@ -12,7 +12,7 @@ export const pillars: PillarItem[] = [
     id: "professional",
     title: "Educação Profissional",
     description:
-      "Cursos livres, técnicos, capacitações corporativas e trilhas de desenvolvimento, conforme o plano contratado.",
+      "Cursos avulsos, capacitações corporativas e trilhas de desenvolvimento. Dependendo do plano contratado até 83% de desconto em EJA, técnicos, graduação e pós-graduação.",
     icon: "layers",
   },
   {

@@ -9,6 +9,13 @@ export const courseSubmenuLinks: NavLinkChild[] = [
   { label: "Cursos Técnicos", href: "https://redesabermais.com/" },
   { label: "Graduação", href: "https://redesabermais.com/" },
   { label: "Pós-Graduação", href: "https://redesabermais.com/" },
+  { label: "Tutor IA", href: "https://redesabermais.com/" },
+  { label: "Reforço Escolar", href: "https://redesabermais.com/" },
+];
+
+/** Links do submenu Saúde e bem estar (menu principal). */
+export const healthWellnessSubmenuLinks: NavLinkChild[] = [
+  { label: "Telemedicina", href: "https://redesabermais.com/" },
 ];
 
 export const navigationLinks: NavLink[] = [
@@ -19,6 +26,10 @@ export const navigationLinks: NavLink[] = [
   {
     label: "Cursos",
     children: courseSubmenuLinks,
+  },
+  {
+    label: "Saúde e bem estar",
+    children: healthWellnessSubmenuLinks,
   },
 ];
 

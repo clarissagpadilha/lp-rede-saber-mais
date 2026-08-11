@@ -50,9 +50,12 @@ export function MobileNavGroup({
 
       <ul
         id={panelId}
+        aria-hidden={!expanded}
         className={cn(
-          "overflow-hidden transition-all duration-200",
-          expanded ? "max-h-80 opacity-100" : "max-h-0 opacity-0",
+          "transition-[max-height,opacity] duration-200",
+          expanded
+            ? "max-h-[min(28rem,calc(100dvh-var(--header-height)-10rem))] overflow-y-auto overscroll-contain opacity-100"
+            : "max-h-0 overflow-hidden opacity-0",
         )}
       >
         {items.map((item) => (
@@ -62,6 +65,7 @@ export function MobileNavGroup({
               label={item.label}
               darkTheme={darkTheme}
               onNavigate={onNavigate}
+              tabIndex={expanded ? undefined : -1}
               className={cn(
                 "block min-h-10 rounded-lg py-2.5 pr-3 pl-7 text-[14px]",
                 solid ? "hover:bg-brand-blue-mist/80" : "hover:bg-white/10",
