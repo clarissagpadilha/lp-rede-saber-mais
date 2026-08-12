@@ -3,7 +3,7 @@ import type { NavLink, NavLinkChild } from "@/types";
 /** Links do submenu Cursos (menu principal). */
 export const courseSubmenuLinks: NavLinkChild[] = [
   { label: "Plataforma 1", href: "https://redesabermais.com/" },
-  { label: "Plataforma 2", href: "https://aqua-tiger-671921.hostingersite.com/" },
+  { label: "Plataforma 2", href: "https://eadon.com.br/Alexandre" },
   { label: "Ebooks/Duolingo", href: "https://plataformadeensino.redesabermais.com/" },
   { label: "EJA", href: "https://redesabermais.com/" },
   { label: "Cursos Técnicos", href: "https://redesabermais.com/" },
@@ -15,7 +15,7 @@ export const courseSubmenuLinks: NavLinkChild[] = [
 
 /** Links do submenu Saúde e bem estar (menu principal). */
 export const healthWellnessSubmenuLinks: NavLinkChild[] = [
-  { label: "Telemedicina", href: "https://redesabermais.com/" },
+  { label: "Telemedicina", href: "https://aqua-tiger-671921.hostingersite.com/" },
 ];
 
 export const navigationLinks: NavLink[] = [

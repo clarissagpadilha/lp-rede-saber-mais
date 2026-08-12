@@ -5,8 +5,8 @@ import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
 const LOGO_SRC = "/logo/logo-rede-saber-mais.png";
-const LOGO_WIDTH = 211;
-const LOGO_HEIGHT = 107;
+const LOGO_WIDTH = 1024;
+const LOGO_HEIGHT = 642;
 
 type LogoProps = {
   className?: string;
@@ -21,6 +21,7 @@ export function LogoMark({ className }: { className?: string }) {
       alt=""
       width={LOGO_WIDTH}
       height={LOGO_HEIGHT}
+      unoptimized
       className={cn("h-8 w-auto shrink-0", className)}
       aria-hidden
     />
@@ -45,7 +46,8 @@ export function Logo({ className, size = "default", theme = "light" }: LogoProps
         alt={siteConfig.name}
         width={LOGO_WIDTH}
         height={LOGO_HEIGHT}
-        className={cn("w-auto shrink-0", size === "sm" ? "h-8" : "h-10 sm:h-11")}
+        unoptimized
+        className={cn("w-auto shrink-0", size === "sm" ? "h-10" : "h-12 sm:h-14 lg:h-16")}
         priority
       />
     </Link>

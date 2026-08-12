@@ -48,7 +48,7 @@ export function Header({ variant = "default" }: HeaderProps) {
       )}
     >
       <Container className="flex min-h-[var(--header-height)] items-center gap-2.5 py-3 lg:gap-3 xl:gap-3.5">
-        <Logo className="shrink-0 [&_img]:h-9 [&_img]:w-auto [&_img]:sm:h-10" />
+        <Logo className="shrink-0 [&_img]:h-12 [&_img]:w-auto [&_img]:sm:h-14 [&_img]:lg:h-16" />
 
         <nav
           aria-label="Menu principal"
