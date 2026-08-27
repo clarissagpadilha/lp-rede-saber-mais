@@ -10,7 +10,7 @@ export function CeoStorySection() {
     <section id="ceo" className="section-spacing bg-brand-blue-mist/45">
       <Container>
         <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:gap-14">
-          <div className="relative mx-auto w-full max-w-[420px] lg:mx-0 lg:max-w-none lg:sticky lg:top-[calc(var(--header-height)+1.5rem)]">
+          <div className="relative order-2 mx-auto w-full max-w-[420px] lg:order-1 lg:mx-0 lg:max-w-none lg:sticky lg:top-[calc(var(--header-height)+1.5rem)]">
             <div
               aria-hidden
               className="absolute -inset-3 rounded-[1.75rem] bg-gradient-to-br from-brand-blue/10 via-transparent to-brand-orange/10"
@@ -30,7 +30,7 @@ export function CeoStorySection() {
             </div>
           </div>
 
-          <div className="min-w-0">
+          <div className="order-1 min-w-0 lg:order-2">
             <Eyebrow className="mb-4 justify-start text-brand-orange-dark before:bg-brand-orange">
               {eyebrow}
             </Eyebrow>
