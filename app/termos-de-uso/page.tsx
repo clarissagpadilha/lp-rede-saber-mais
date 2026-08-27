@@ -17,32 +17,32 @@ export default function TermsOfUsePage() {
     <SiteShell>
       <main className="py-16 sm:py-24">
         <Container className="max-w-3xl">
-          <h1 className="font-serif text-3xl text-brand-navy">Termos de Uso</h1>
+          <h1 className="font-display text-3xl font-[800] tracking-[-0.03em] leading-[1.08] text-brand-navy">Termos de Uso</h1>
           <p className="mt-4 text-brand-gray">
             Esta é uma versão provisória dos Termos de Uso da {siteConfig.name}. O conteúdo definitivo
             será publicado após validação jurídica.
           </p>
 
           <section className="mt-10 space-y-4 text-brand-gray">
-            <h2 className="font-serif text-xl text-brand-navy">1. Objeto</h2>
+            <h2 className="font-display text-xl font-bold tracking-[-0.03em] leading-[1.1] text-brand-navy">1. Objeto</h2>
             <p>
               Estes termos regulam o uso deste site institucional e o envio de solicitações de contato
               relacionadas ao Plano de Educação Rede Saber Mais.
             </p>
 
-            <h2 className="font-serif text-xl text-brand-navy">2. Uso do site</h2>
+            <h2 className="font-display text-xl font-bold tracking-[-0.03em] leading-[1.1] text-brand-navy">2. Uso do site</h2>
             <p>
               O visitante compromete-se a utilizar o site de forma lícita, fornecendo informações
               verdadeiras ao preencher formulários de contato.
             </p>
 
-            <h2 className="font-serif text-xl text-brand-navy">3. Propriedade intelectual</h2>
+            <h2 className="font-display text-xl font-bold tracking-[-0.03em] leading-[1.1] text-brand-navy">3. Propriedade intelectual</h2>
             <p>
               Textos, marcas, logotipos e demais conteúdos exibidos neste site pertencem à{" "}
               {siteConfig.name} ou a seus licenciadores, sendo vedada a reprodução sem autorização.
             </p>
 
-            <h2 className="font-serif text-xl text-brand-navy">4. Alterações</h2>
+            <h2 className="font-display text-xl font-bold tracking-[-0.03em] leading-[1.1] text-brand-navy">4. Alterações</h2>
             <p>
               Estes termos podem ser atualizados a qualquer momento. Recomendamos a consulta periódica
               desta página.

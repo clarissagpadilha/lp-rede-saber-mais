@@ -15,7 +15,7 @@ export function ExperienceSection() {
             “
           </div>
           <div>
-            <h2 className="mb-3.5 font-serif text-[26px] leading-snug text-brand-navy">{title}</h2>
+            <h2 className="mb-3.5 font-display text-[26px] font-bold leading-[1.1] tracking-[-0.03em] text-brand-navy max-sm:leading-[1.08]">{title}</h2>
             <p className="max-w-[600px] text-base text-brand-gray">{description}</p>
           </div>
         </div>

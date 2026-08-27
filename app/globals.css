@@ -35,7 +35,7 @@
   --font-sans: var(--font-inter), sans-serif;
   --font-serif: var(--font-fraunces), serif;
   --font-mono: var(--font-ibm-plex-mono), monospace;
-  --font-manrope: var(--font-manrope), sans-serif;
+  --font-display: var(--font-montserrat), "Montserrat", sans-serif;
 
   --radius-brand: var(--radius);
   --radius-brand-sm: var(--radius-sm);
@@ -83,7 +83,31 @@ body {
 }
 
 h1,
-h2,
+h2 {
+  font-family: var(--font-montserrat), "Montserrat", sans-serif;
+  letter-spacing: -0.03em;
+}
+
+h1 {
+  font-weight: 800;
+  line-height: 1.08;
+}
+
+h2 {
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+@media (max-width: 639px) {
+  h1 {
+    line-height: 1.05;
+  }
+
+  h2 {
+    line-height: 1.08;
+  }
+}
+
 h3 {
   font-family: var(--font-fraunces), serif;
   font-weight: 500;

@@ -38,7 +38,7 @@ export function SectionHeader({
       ) : null}
       <h2
         className={cn(
-          "font-serif text-[clamp(1.75rem,3.6vw,2.5rem)] leading-[1.2] text-brand-navy",
+          "font-display font-bold tracking-[-0.03em] text-[clamp(1.75rem,3.6vw,2.5rem)] leading-[1.1] max-sm:leading-[1.08] text-brand-navy",
           titleClassName,
         )}
       >

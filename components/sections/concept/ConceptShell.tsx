@@ -61,7 +61,7 @@ export function ConceptHeader({ eyebrow, headline, highlight, subline }: Concept
       className="mx-auto flex max-w-2xl flex-col gap-4 text-center sm:gap-5"
     >
       <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-[#FFD9BB]">{eyebrow}</p>
-      <h2 className="flex flex-col gap-2 font-serif text-[clamp(1.75rem,4vw,2.75rem)] leading-[1.15] tracking-[-0.02em] text-white sm:gap-2.5">
+      <h2 className="flex flex-col gap-2 font-display text-[clamp(1.75rem,4vw,2.75rem)] font-bold leading-[1.1] tracking-[-0.03em] text-white max-sm:leading-[1.08] sm:gap-2.5">
         <span>{headline}</span>
         <span className="text-brand-orange">{highlight}</span>
       </h2>

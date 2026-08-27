@@ -2,7 +2,7 @@ import { heroContent } from "@/content/hero";
 import { ButtonLink, Container } from "@/components/ui";
 import { cn } from "@/lib/utils";
 
-import { HeroBackground } from "./hero/HeroBackground";
+import { HeroCarousel } from "./hero/HeroCarousel";
 
 function ChevronRightIcon({ className }: { className?: string }) {
   return (
@@ -45,7 +45,7 @@ function HeroCopy({ mobile }: { mobile?: boolean }) {
 
       <h1
         className={cn(
-          "flex flex-col font-manrope font-[800] tracking-[-0.02em] text-brand-navy",
+          "flex flex-col font-display font-[800] tracking-[-0.03em] text-brand-navy",
           mobile
             ? "gap-0.5 text-center text-[clamp(1.45rem,7vw,1.75rem)] leading-[1.05]"
             : "text-[clamp(1.75rem,4.5vw,3rem)] leading-[1.08]",
@@ -96,7 +96,7 @@ export function HeroSection() {
         "lg:min-h-[max(720px,50vw)]",
       )}
     >
-      <HeroBackground />
+      <HeroCarousel />
 
       {/* Desktop e tablet — layout original */}
       <Container className="relative z-[1] hidden flex-1 items-center pb-8 pt-[calc(var(--header-height)+1.75rem)] sm:flex md:pb-10 md:pt-[calc(var(--header-height)+2.25rem)] lg:pb-12 lg:pt-[calc(var(--header-height)+2.75rem)]">

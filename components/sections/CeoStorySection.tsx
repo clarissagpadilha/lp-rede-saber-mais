@@ -4,13 +4,13 @@ import { Container, Eyebrow } from "@/components/ui";
 import { ceoStoryContent } from "@/content/ceo-story";
 
 export function CeoStorySection() {
-  const { eyebrow, image, name, paragraphs, role } = ceoStoryContent;
+  const { closing, eyebrow, image, name, paragraphs, role } = ceoStoryContent;
 
   return (
     <section id="ceo" className="section-spacing bg-brand-blue-mist/45">
       <Container>
-        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:gap-14">
-          <div className="relative mx-auto w-full max-w-[420px] lg:mx-0 lg:max-w-none">
+        <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:gap-14">
+          <div className="relative mx-auto w-full max-w-[420px] lg:mx-0 lg:max-w-none lg:sticky lg:top-[calc(var(--header-height)+1.5rem)]">
             <div
               aria-hidden
               className="absolute -inset-3 rounded-[1.75rem] bg-gradient-to-br from-brand-blue/10 via-transparent to-brand-orange/10"
@@ -22,7 +22,7 @@ export function CeoStorySection() {
                   alt={image.alt}
                   fill
                   sizes="(max-width: 1024px) 420px, 480px"
-                  className="object-cover"
+                  className="object-cover object-[center_18%]"
                 />
               ) : (
                 <CeoImagePlaceholder name={name} />
@@ -34,7 +34,7 @@ export function CeoStorySection() {
             <Eyebrow className="mb-4 justify-start text-brand-orange-dark before:bg-brand-orange">
               {eyebrow}
             </Eyebrow>
-            <h2 className="font-serif text-[clamp(1.75rem,3.4vw,2.5rem)] leading-[1.15] text-brand-navy">
+            <h2 className="font-display text-[clamp(1.75rem,3.4vw,2.5rem)] font-bold leading-[1.1] tracking-[-0.03em] text-brand-navy max-sm:leading-[1.08]">
               {name}
             </h2>
             <p className="mt-2 text-[15px] font-semibold text-brand-blue">{role}</p>
@@ -45,6 +45,11 @@ export function CeoStorySection() {
                 </p>
               ))}
             </div>
+            {closing ? (
+              <p className="mt-6 text-[16px] font-semibold leading-relaxed text-brand-navy">
+                {closing}
+              </p>
+            ) : null}
           </div>
         </div>
       </Container>

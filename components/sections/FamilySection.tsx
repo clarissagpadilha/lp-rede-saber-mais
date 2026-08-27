@@ -12,7 +12,7 @@ export function FamilySection() {
             <Eyebrow className="mb-4 justify-start text-[#FFD9BB] before:bg-[#FFD9BB]">
               {eyebrow}
             </Eyebrow>
-            <h2 className="font-serif text-[clamp(1.625rem,3.2vw,2.375rem)] leading-[1.2] text-white">
+            <h2 className="font-display text-[clamp(1.625rem,3.2vw,2.375rem)] font-bold leading-[1.1] tracking-[-0.03em] text-white max-sm:leading-[1.08]">
               {title.map((part) => (
                 <span key={part.text} className={part.highlight ? "text-brand-orange" : undefined}>
                   {part.text}

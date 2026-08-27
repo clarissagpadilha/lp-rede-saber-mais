@@ -10,7 +10,7 @@ export function PersonalizationSection() {
         <Eyebrow className="mb-4 justify-center text-[#FFD9BB] before:bg-[#FFD9BB]">
           {eyebrow}
         </Eyebrow>
-        <h2 className="font-serif text-[clamp(1.625rem,3.4vw,2.25rem)] leading-snug text-white">
+        <h2 className="font-display text-[clamp(1.625rem,3.4vw,2.25rem)] font-bold leading-[1.1] tracking-[-0.03em] text-white max-sm:leading-[1.08]">
           {title}
         </h2>
         <p className="mx-auto mt-4 max-w-[560px] text-[16.5px] text-white/70">{description}</p>

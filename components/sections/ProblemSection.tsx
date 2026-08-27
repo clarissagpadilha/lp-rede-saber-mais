@@ -12,7 +12,7 @@ export function ProblemSection() {
             <Eyebrow className="mb-4 text-brand-orange-dark before:block before:h-px before:w-5 before:bg-brand-orange before:content-['']">
               {eyebrow}
             </Eyebrow>
-            <h2 className="max-w-[480px] font-serif text-[clamp(1.625rem,3.2vw,2.25rem)] leading-[1.25] text-brand-navy">
+            <h2 className="max-w-[480px] font-display text-[clamp(1.625rem,3.2vw,2.25rem)] font-bold leading-[1.1] tracking-[-0.03em] text-brand-navy max-sm:leading-[1.08]">
               {title}
             </h2>
             <p className="mt-[18px] max-w-[460px] text-[16.5px] text-brand-gray">{description}</p>

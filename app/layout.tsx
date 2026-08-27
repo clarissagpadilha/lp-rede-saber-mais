@@ -1,4 +1,4 @@
-import { Fraunces, IBM_Plex_Mono, Inter, Manrope } from "next/font/google";
+import { Fraunces, IBM_Plex_Mono, Inter, Montserrat } from "next/font/google";
 
 import type { ReactNode } from "react";
 
@@ -34,10 +34,10 @@ const ibmPlexMono = IBM_Plex_Mono({
   display: "swap",
 });
 
-const manrope = Manrope({
-  variable: "--font-manrope",
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
   subsets: ["latin"],
-  weight: ["800"],
+  weight: ["700", "800"],
   display: "swap",
 });
 
@@ -49,7 +49,7 @@ export default function RootLayout({
   return (
     <html
       lang={siteConfig.locale}
-      className={`${inter.variable} ${fraunces.variable} ${ibmPlexMono.variable} ${manrope.variable} h-full scroll-smooth antialiased`}
+      className={`${inter.variable} ${fraunces.variable} ${ibmPlexMono.variable} ${montserrat.variable} h-full scroll-smooth antialiased`}
     >
       <body className="min-h-full bg-brand-white font-sans text-brand-ink">
         <a href="#conteudo-principal" className="skip-link">
