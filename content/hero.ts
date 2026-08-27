@@ -18,10 +18,8 @@ export const heroContent = {
     { text: "e suas famílias." },
   ],
   mobileSubheadlineLines: [
-    "Um Plano de Educação completo para",
-    "empresas e instituições que desejam",
-    "desenvolver pessoas, ampliar oportunidades",
-    "e fortalecer sua cultura de aprendizagem.",
+    "Desenvolva pessoas, amplie oportunidades",
+    "e fortaleça sua cultura de aprendizagem.",
   ],
   cta: {
     label: "Conheça o Plano de Educação",
@@ -35,12 +33,12 @@ export const heroContent = {
     },
     {
       src: "/images/hero/hero-slide-02.jpg",
-      mobileSrc: "/images/hero/hero-slide-02.jpg",
+      mobileSrc: "/images/hero/hero-slide-02-mobile.jpg",
       alt: "Estudantes e profissionais aprendendo juntos em ambiente colaborativo",
     },
     {
       src: "/images/hero/hero-slide-03.jpg",
-      mobileSrc: "/images/hero/hero-slide-03.jpg",
+      mobileSrc: "/images/hero/hero-slide-03-mobile.jpg",
       alt: "Família aprendendo junta em casa com um tablet",
     },
   ],

@@ -60,7 +60,7 @@ export function HeroCarousel() {
                   priority={index === 0}
                   unoptimized
                   sizes="100vw"
-                  className={cn("object-cover", isFirst ? "object-[center_52%]" : "object-[78%_center]")}
+                  className={cn("object-cover", isFirst ? "object-[center_52%]" : "object-[center_42%]")}
                 />
               </div>
               <div className="absolute inset-0 hidden lg:block">
@@ -85,11 +85,11 @@ export function HeroCarousel() {
     </div>
 
       {slides.length > 1 ? (
-        <div className="absolute inset-x-0 bottom-5 z-[2] flex items-center justify-center gap-3 lg:bottom-8 lg:justify-end lg:pr-10">
+        <div className="absolute inset-x-0 z-[2] flex items-center justify-center gap-3 max-sm:bottom-[6.75rem] sm:bottom-5 lg:bottom-8 lg:justify-end lg:pr-10">
           <button
             type="button"
             aria-label="Imagem anterior"
-            className="inline-flex size-9 items-center justify-center rounded-full border border-brand-navy/15 bg-white/90 text-brand-navy shadow-sm transition-colors hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue"
+            className="hidden size-9 items-center justify-center rounded-full border border-brand-navy/15 bg-white/90 text-brand-navy shadow-sm transition-colors hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue sm:inline-flex"
             onClick={() => goTo(activeIndex - 1)}
           >
             <ChevronIcon className="size-4 rotate-180" />
@@ -113,7 +113,7 @@ export function HeroCarousel() {
           <button
             type="button"
             aria-label="Próxima imagem"
-            className="inline-flex size-9 items-center justify-center rounded-full border border-brand-navy/15 bg-white/90 text-brand-navy shadow-sm transition-colors hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue"
+            className="hidden size-9 items-center justify-center rounded-full border border-brand-navy/15 bg-white/90 text-brand-navy shadow-sm transition-colors hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue sm:inline-flex"
             onClick={() => goTo(activeIndex + 1)}
           >
             <ChevronIcon className="size-4" />
