@@ -2,7 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 
-import { conceptContent, conceptPillars } from "@/content/concept";
+import { conceptPillars } from "@/content/concept";
 
 import { fadeUp } from "./ConceptShell";
 
