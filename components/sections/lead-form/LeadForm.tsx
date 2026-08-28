@@ -25,7 +25,7 @@ import {
   type LeadFields,
 } from "@/lib/schemas/lead-form";
 import { getClientAttribution } from "@/lib/utm";
-import { buildWhatsAppUrl } from "@/lib/whatsapp";
+import { buildLeadWhatsAppUrl, buildWhatsAppUrl } from "@/lib/whatsapp";
 import { cn } from "@/lib/utils";
 
 type FormState = "idle" | "submitting" | "success" | "error";
@@ -167,33 +167,19 @@ export function LeadForm() {
     submittingRef.current = true;
     setFormState("submitting");
 
+    const whatsappUrl = buildLeadWhatsAppUrl(validation.data);
+
     try {
-      const response = await submitLeadRequest(validation.data);
-
-      if (response.success) {
-        setFormState("success");
-        setFieldErrors({});
-        setStatusMessage(formContent.successMessage);
-        setValues(initialValues);
-        formStartedAtRef.current = Date.now();
-        return;
-      }
-
-      if (response.error === "validation" && response.fields) {
-        setFieldErrors(response.fields as Partial<Record<keyof LeadFields, string>>);
-        focusFirstInvalidField(response.fields as Partial<Record<keyof LeadFields, string>>);
-      }
-
-      setFormState("error");
-      setStatusMessage(response.message || formContent.errorMessage);
-      statusRef.current?.focus();
+      await submitLeadRequest(validation.data);
     } catch {
-      setFormState("error");
-      setStatusMessage(formContent.errorMessage);
-      statusRef.current?.focus();
-    } finally {
-      submittingRef.current = false;
+      // Continua para o WhatsApp mesmo se o envio interno falhar.
     }
+
+    setFieldErrors({});
+    setFormState("success");
+    setStatusMessage(formContent.successMessage);
+    window.location.assign(whatsappUrl);
+    submittingRef.current = false;
   };
 
   if (isSuccess) {
