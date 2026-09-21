@@ -51,6 +51,16 @@ export default function RootLayout({
       lang={siteConfig.locale}
       className={`${inter.variable} ${fraunces.variable} ${ibmPlexMono.variable} ${montserrat.variable} h-full scroll-smooth antialiased`}
     >
+      <head>
+        <script
+          src="https://assistente-saber-mais.onrender.com/widget.js"
+          data-agent-id="rede-saber-mais"
+          data-position="bottom-left"
+          data-primary-color="#0F2A4A"
+          data-accent-color="#E8722C"
+          defer
+        />
+      </head>
       <body className="min-h-full bg-brand-white font-sans text-brand-ink">
         <a href="#conteudo-principal" className="skip-link">
           Ir para o conteúdo
