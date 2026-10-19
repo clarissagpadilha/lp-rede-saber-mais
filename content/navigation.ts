@@ -7,8 +7,7 @@ export const courseSubmenuLinks: NavLinkChild[] = [
   { label: "Ebooks/Duolingo", href: "https://franquiasaas.com.br/platform/planodeeducacaoredesabermais/" },
   { label: "EJA", href: "https://redesabermais.com/" },
   { label: "Cursos Técnicos", href: "https://redesabermais.com/" },
-  { label: "Graduação", href: "https://redesabermais.com/" },
-  { label: "Pós-Graduação", href: "https://redesabermais.com/" },
+  { label: "Curso Superior", href: "https://redesabermais.pvunypublica.com.br/" },
   { label: "Reforço Escolar com IA", href: "https://www.pledreforco.com.br/sabermais" },
 ];
 
