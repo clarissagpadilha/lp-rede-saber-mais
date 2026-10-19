@@ -11,8 +11,8 @@ export const familyContent = {
     "Quando um colaborador sabe que seus filhos também podem ter acesso à educação de qualidade, o benefício deixa de ser apenas corporativo e passa a gerar impacto dentro de casa. A Rede Saber Mais amplia oportunidades, fortalece vínculos e demonstra um cuidado genuíno com quem faz parte da sua organização.",
   micro: "A abrangência familiar varia de acordo com o modelo contratado.",
   video: {
-    id: "HdW2lYw4N1k",
+    id: "XxkcNI0r9vo",
     title: "Educação para toda a família — Rede Saber Mais",
-    startSeconds: 4,
+    startSeconds: 0,
   },
 };
