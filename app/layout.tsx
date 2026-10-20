@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next";
 import { Fraunces, IBM_Plex_Mono, Inter, Montserrat } from "next/font/google";
 
 import type { ReactNode } from "react";
@@ -66,6 +67,7 @@ export default function RootLayout({
           Ir para o conteúdo
         </a>
         {children}
+        <Analytics />
       </body>
     </html>
   );
